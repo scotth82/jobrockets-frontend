@@ -1,4 +1,4 @@
-import SideNav from "../_components/sidenav";
+import SideNav from "../_components/sideNav";
 
 export default function Page() {
   return (
