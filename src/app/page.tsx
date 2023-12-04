@@ -1,20 +1,58 @@
 import Image from "next/image";
-
+import Link from "next/link";
+import TopNav from "./_components/topNav";
+//TODO:
+//Re-do logo image as own
+//Re-do favIcon as own
 export default function Home() {
   return (
-    <main className="items-center justify-between">
-      <div className="text-center items-center justify-between">
-        <br />
-        <br />
-        <p>Job Rockets!</p>
-        <br />
-        <p>We are here to help you track your job seeking progress!</p>
-        <p>We are here to encourage you along the way!!</p>
-        <p>
-          We are here to provide you insights and let you share your own
-          experience on company's recruiting experience!!!
-        </p>
-      </div>
+    <main className="items-center justify-between px-20 relative">
+      <header className="flex justify-between py-10 items-center sticky top-0 bg-black opacity-90">
+        <div className="flex items-center">
+          <Image src="/logo.png" width="40" height="40" alt="logo" />
+          <p className="font-bold text-xl">Job Rockets</p>
+
+          <nav className="px-10 justify-between space-x-5">
+            <TopNav />
+          </nav>
+        </div>
+
+        <div className="justify-between space-x-5">
+          <Link href="/auth/signin">
+            <button className="rounded-full mx-50 py-1 hover:text-sky-600">
+              Sign in
+            </button>
+          </Link>
+          <Link href="/auth/signup">
+            <button className="rounded-full px-3 py-1 bg-sky-600 hover:bg-sky-700">
+              Sign up
+            </button>
+          </Link>
+        </div>
+      </header>
+
+      <section>
+        <div className="text-center items-center justify-between">
+          <br />
+          <br />
+          <p>Job Rockets!</p>
+          <br />
+          <p>We are here to help you track your job seeking progress!</p>
+          <p>We are here to encourage you along the way!!</p>
+          <p>
+            We are here to provide you insights and let you share your own
+            experience on company's recruiting experience!!!
+          </p>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+      </section>
+      <footer className="justify-between py-10">&copy; 2023 JOB ROCKETS</footer>
     </main>
 
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
