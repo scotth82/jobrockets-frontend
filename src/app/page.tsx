@@ -7,12 +7,12 @@ import TopNav from "./_components/topNav";
 export default function Home() {
   return (
     <main className="items-center justify-between px-20 relative">
-      <header className="flex justify-between py-10 items-center sticky top-0 bg-black opacity-90">
+      <header className="flex shrink justify-between py-10 items-center sticky top-0 bg-inherit opacity-90">
         <div className="flex items-center">
           <Image src="/logo.png" width="40" height="40" alt="logo" />
           <p className="font-bold text-xl">Job Rockets</p>
 
-          <nav className="px-10 justify-between space-x-5">
+          <nav className="px-10">
             <TopNav />
           </nav>
         </div>
@@ -41,7 +41,7 @@ export default function Home() {
           <p>We are here to encourage you along the way!!</p>
           <p>
             We are here to provide you insights and let you share your own
-            experience on company's recruiting experience!!!
+            experience on job application experience!!!
           </p>
           <br />
           <br />
