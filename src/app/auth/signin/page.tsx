@@ -33,7 +33,7 @@ export default function SignInPage() {
 
       <div className="flex justify-center mt-12">
         <button
-          onClick={() => signIn("google", { callbackUrl: "/test" })}
+          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
           className="flex justify-center gap-4 items-center shadow-sm 
              bg-neutral-100 hover:bg-neutral-200 px-12 py-2 rounded-md border-neutral-300 border dark:bg-neutral-700 dark:hover:bg-neutral-600"
         >
