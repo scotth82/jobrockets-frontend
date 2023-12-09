@@ -8,11 +8,12 @@ import {
   DocumentDuplicateIcon,
   PresentationChartBarIcon,
   ChartBarSquareIcon,
+  UserPlusIcon,
 } from "@heroicons/react/24/outline";
 
 const links = [
   { name: "Dashboard", href: "/dashboard", icon: ChartBarSquareIcon },
-  { name: "LinkA", href: "/dashboard/linka", icon: UserGroupIcon },
+  { name: "Invite a Friend", href: "/dashboard/invite", icon: UserPlusIcon },
   { name: "LinkB", href: "/dashboard/linkb", icon: DocumentDuplicateIcon },
 ];
 

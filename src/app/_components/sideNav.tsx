@@ -3,7 +3,7 @@ import Link from "next/link";
 import NavLinks from "@/app/_components/navLinks";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-import { PowerIcon } from "@heroicons/react/24/outline";
+import { PowerIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 export default function SideNav(session: any) {
   const user = session.session.user;
@@ -18,7 +18,10 @@ export default function SideNav(session: any) {
         <p className="font-bold text-xl">Job Rockets</p>
       </Link>
 
-      <p className="text-center">{user?.name}</p>
+      <button className="flex justify-center gap-2">
+        <UserCircleIcon className="w-6" />
+        {user?.name}
+      </button>
 
       <button
         className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium  hover:text-blue-600 dark:hover:text-neutral-500 md:flex-none md:justify-center md:p-2 md:px-3"
