@@ -10,12 +10,30 @@ import {
   ChartBarSquareIcon,
   UserPlusIcon,
   IdentificationIcon,
+  FolderOpenIcon,
 } from "@heroicons/react/24/outline";
 
 const links = [
-  { name: "Dashboard", href: "/dashboard", icon: ChartBarSquareIcon },
-  { name: "Invite a Friend", href: "/dashboard/invite", icon: UserPlusIcon },
-  { name: "Contacts", href: "/dashboard/contacts", icon: IdentificationIcon },
+  {
+    name: "Dashboard",
+    href: "/dashboard",
+    icon: ChartBarSquareIcon,
+  },
+  {
+    name: "Invite a Friend",
+    href: "/dashboard/invite",
+    icon: UserPlusIcon,
+  },
+  {
+    name: "Contacts",
+    href: "/dashboard/contacts",
+    icon: IdentificationIcon,
+  },
+  {
+    name: "My Resumes",
+    href: "/dashboard/myfiles",
+    icon: DocumentDuplicateIcon,
+  },
 ];
 
 export default function NavLinks() {
