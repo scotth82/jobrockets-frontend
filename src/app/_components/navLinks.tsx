@@ -31,7 +31,7 @@ const links = [
   },
   {
     name: "My Resumes",
-    href: "/dashboard/myfiles",
+    href: "/dashboard/files",
     icon: DocumentDuplicateIcon,
   },
 ];

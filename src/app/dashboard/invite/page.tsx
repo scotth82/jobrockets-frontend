@@ -5,7 +5,7 @@ export default function Page() {
     <main>
       <form className="flex flex-col items-center gap-5 ">
         <div className="p-10 text-2xl font-bold">
-          Please invite a friend to Job Rockets!
+          Please invite a friend to join Job Rockets!
         </div>
 
         <div className="space-x-5 border-neutral-800 justify-right w-50">
