@@ -9,7 +9,7 @@ export default function SideNav(session: any) {
   const user = session.session.user;
 
   return (
-    <div className="flex h-full flex-col px-3 py-4 md:px-2">
+    <div className="flex h-full flex-col py-4 px-3">
       <Link
         className="mb-2 flex h-20 items-center justify-center rounded-md bg-blue-white dark:bg-black text-black dark:text-white p-4 md:h-20"
         href="/dashboard"
