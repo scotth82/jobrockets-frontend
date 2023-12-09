@@ -47,8 +47,9 @@ export default function SignInPage() {
         </button>
       </div>
 
-      <div className="flex justify-center py-5">
+      {/* <div className="flex justify-center py-5">
         <button
+          onClick={() => signIn("azure-ad-b2c", { callbackUrl: "/dashboard" })}
           className="flex justify-center gap-4 items-center shadow-sm 
              bg-neutral-100 hover:bg-neutral-200 px-10 py-2 rounded-md border-neutral-300 border dark:bg-neutral-700 dark:hover:bg-neutral-600"
         >
@@ -60,7 +61,7 @@ export default function SignInPage() {
           />
           <span>Sign in with Microsoft</span>
         </button>
-      </div>
+      </div> */}
     </main>
   );
 }
