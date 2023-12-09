@@ -9,12 +9,13 @@ import {
   PresentationChartBarIcon,
   ChartBarSquareIcon,
   UserPlusIcon,
+  IdentificationIcon,
 } from "@heroicons/react/24/outline";
 
 const links = [
   { name: "Dashboard", href: "/dashboard", icon: ChartBarSquareIcon },
   { name: "Invite a Friend", href: "/dashboard/invite", icon: UserPlusIcon },
-  { name: "LinkB", href: "/dashboard/linkb", icon: DocumentDuplicateIcon },
+  { name: "Contacts", href: "/dashboard/contacts", icon: IdentificationIcon },
 ];
 
 export default function NavLinks() {
