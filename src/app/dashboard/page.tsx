@@ -7,7 +7,11 @@ import {
   ClockIcon,
   UserGroupIcon,
   InboxIcon,
+  RocketLaunchIcon,
+  TrophyIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 export default function Page() {
   const { data: session, status } = useSession();
@@ -24,13 +28,38 @@ export default function Page() {
 
   console.log("User is authenticated.");
 
+  const data = [
+    {
+      name: "Job 1",
+      total: 10,
+    },
+    {
+      name: "Job 2",
+      total: 12,
+    },
+    {
+      name: "Job 3",
+      total: 3,
+    },
+    {
+      name: "Job 4",
+      total: 40,
+    },
+    {
+      name: "Job 5",
+      total: 23,
+    },
+  ];
+
   return (
     <main>
       <h1 className={`mb-4 text-xl md:text-2xl`}>Dashboard</h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div className="rounded-xl bg-gray-50 dark:bg-neutral-900 p-2 shadow-sm">
           <div className="flex p-4">
-            {<ClockIcon className="h-5 w-5 text-gray-700 dark:text-white" />}
+            {
+              <RocketLaunchIcon className="h-5 w-5 text-gray-700 dark:text-white" />
+            }
             <h3 className="ml-2 text-sm font-medium">Jobs To Apply</h3>
           </div>
           <p
@@ -43,7 +72,7 @@ export default function Page() {
 
         <div className="rounded-xl bg-gray-50 dark:bg-neutral-900 p-2 shadow-sm">
           <div className="flex p-4">
-            {<ClockIcon className="h-5 w-5 text-gray-700 dark:text-white" />}
+            {<TrophyIcon className="h-5 w-5 text-gray-700 dark:text-white" />}
             <h3 className="ml-2 text-sm font-medium">Job Applied</h3>
           </div>
           <p
@@ -69,7 +98,7 @@ export default function Page() {
 
         <div className="rounded-xl bg-gray-50 dark:bg-neutral-900 p-2 shadow-sm">
           <div className="flex p-4">
-            {<ClockIcon className="h-5 w-5 text-gray-700 dark:text-white" />}
+            {<XMarkIcon className="h-5 w-5 text-gray-700 dark:text-white" />}
             <h3 className="ml-2 text-sm font-medium">Dead Jobs</h3>
           </div>
           <p
@@ -78,6 +107,36 @@ export default function Page() {
           >
             20
           </p>
+        </div>
+      </div>
+
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+        <div className="py-10 w-full md:col-span-4">
+          <h3 className={`mb-4 text-xl md:text-xl`}>
+            Days Since Last Follow Up
+          </h3>
+          <ResponsiveContainer width="100%" height={350}>
+            <BarChart data={data} layout="vertical">
+              <XAxis
+                // dataKey="name"
+                type="number"
+                stroke="#888888"
+                fontSize={12}
+                tickLine={false}
+                axisLine={false}
+                tickFormatter={(value) => `${value} Days`}
+              />
+              <YAxis
+                type="category"
+                dataKey="name"
+                stroke="#888888"
+                fontSize={12}
+                tickLine={false}
+                axisLine={false}
+              />
+              <Bar dataKey="total" fill="#adfa1d" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
     </main>
