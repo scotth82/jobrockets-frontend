@@ -13,7 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
-export default function Page() {
+export default function DashboardPage() {
   const { data: session, status } = useSession();
 
   if (status === "loading") {
@@ -28,7 +28,7 @@ export default function Page() {
 
   console.log("User is authenticated.");
 
-  const data = [
+  let data = [
     {
       name: "Job 1",
       total: 10,
@@ -51,6 +51,14 @@ export default function Page() {
     },
   ];
 
+  data.sort((a, b) => {
+    return b.total - a.total;
+  });
+
+  let strokeColor = "black";
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    strokeColor = "white";
+  }
   return (
     <main>
       <h1 className={`mb-4 text-xl md:text-2xl`}>Dashboard</h1>
@@ -115,12 +123,21 @@ export default function Page() {
           <h3 className={`mb-4 text-xl md:text-xl`}>
             Days Since Last Follow Up
           </h3>
-          <ResponsiveContainer width="100%" height={350}>
-            <BarChart data={data} layout="vertical">
+          <ResponsiveContainer
+            width="100%"
+            height={350}
+            className="rounded-xl bg-gray-50 dark:bg-neutral-900 p-2 shadow-sm"
+          >
+            <BarChart
+              data={data}
+              layout="vertical"
+              className="text-black dark:stroke-white"
+            >
               <XAxis
+                className="text-black dark:text-white"
                 // dataKey="name"
+                stroke={strokeColor}
                 type="number"
-                stroke="#888888"
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
@@ -129,7 +146,7 @@ export default function Page() {
               <YAxis
                 type="category"
                 dataKey="name"
-                stroke="#888888"
+                stroke={strokeColor}
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
